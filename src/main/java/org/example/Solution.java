@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,7 +47,6 @@ public class Solution {
     }
 
     public int reverse(int x) {
-
         int sign = x < 0 ? -1 : 1;
         int number = Math.abs(x);
         int results = 0;
@@ -66,5 +66,37 @@ public class Solution {
         }
 
         return sign * results;
+    }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        double median = 0.0;
+        int size = nums1.length + nums2.length;
+
+        int[] numbers = new int[size];
+        int i = 0;
+
+        for (; i < nums1.length; i++) {
+            numbers[i] = nums1[i];
+        }
+
+        for (; i < numbers.length; i++) {
+            numbers[i] = nums2[i - nums1.length];
+        }
+
+        Arrays.sort(numbers);
+
+        if (size % 2 == 0) {
+            int left = (numbers[(size/2) - 1]);
+            int right = (numbers[size/2]);
+
+            if (left != 0 && right != 0) {
+                median = (left + right) / 2.0;
+            }
+
+        } else {
+            median = numbers[(size - 1)/2];
+        }
+
+        return median;
     }
 }

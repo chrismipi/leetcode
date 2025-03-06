@@ -16,7 +16,7 @@ public class SolutionTest {
     }
 
     @Nested
-    class testTwoSum {
+    class TwoSum {
         @Test
         public void simple() {
             int[] nums = {2,7,11,15};
@@ -31,7 +31,7 @@ public class SolutionTest {
     }
 
     @Nested
-    class testsRomanToInt {
+    class RomanToInt {
 
         @Test
         public void simple() {
@@ -49,7 +49,7 @@ public class SolutionTest {
     }
 
     @Nested
-    class testsReverse {
+    class ReverseInt {
         @Test
         public void simple() {
             int result = solution.reverse(123);
@@ -87,4 +87,37 @@ public class SolutionTest {
         }
     }
 
+    @Nested
+    class FindMedianSortedArrays {
+
+        @Test
+        public void simple() {
+            int[] nums1 = {1,3};
+            int[] nums2 = {2};
+
+            double result = solution.findMedianSortedArrays(nums1, nums2);
+
+            assertEquals(2.0, result);
+        }
+
+        @Test
+        public void medium() {
+            int[] nums1 = {1,2};
+            int[] nums2 = {3,4};
+
+            double result = solution.findMedianSortedArrays(nums1, nums2);
+
+            assertEquals(2.5, result);
+        }
+
+        @Test
+        public void hard() {
+            int[] nums1 = {0,0,0,0,0};
+            int[] nums2 = {-1,0,0,0,0,0,1};
+
+            double result = solution.findMedianSortedArrays(nums1, nums2);
+
+            assertEquals(0.0, result);
+        }
+    }
 }
