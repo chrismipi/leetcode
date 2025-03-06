@@ -120,4 +120,15 @@ public class SolutionTest {
             assertEquals(0.0, result);
         }
     }
+
+    @Nested
+    class Sqrt{
+
+        @Test
+        public void simple() {
+            int result = solution.mySqrt(8);
+
+            assertEquals(2, result);
+        }
+    }
 }
