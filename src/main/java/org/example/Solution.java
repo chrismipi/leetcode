@@ -1,8 +1,6 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -120,5 +118,34 @@ public class Solution {
         }
 
         return result;
+    }
+
+    public int[] findMissingAndRepeatedValues(int[][] grid) {
+        Set<Integer> numbers = new HashSet<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        numbers.add(9);
+
+        Set<Integer> repeatedValues = new HashSet<>();
+        int missing = 0;
+        int repeated = 0;
+
+        for(int i = 0; i < grid.length; i++) {
+            for(int j = 0; j < grid[i].length; j++) {
+                if (!numbers.contains(grid[i][j])) {
+                    missing = grid[i][j];
+                }
+
+
+            }
+        }
+
+        return new int[]{missing, repeated};
     }
 }

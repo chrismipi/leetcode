@@ -131,4 +131,27 @@ public class SolutionTest {
             assertEquals(2, result);
         }
     }
+
+    @Nested
+    class MissingAndRepeatedValues {
+        @Test
+        public void simple() {
+            int[][] grid = {{1,3},{2,2}};
+            int[] result = solution.findMissingAndRepeatedValues(grid);
+
+            int[] expected = {2,4};
+            assertEquals(expected[0], result[0]);
+            assertEquals(expected[1], result[1]);
+        }
+
+        @Test
+        public void medium() {
+            int[][] grid = {{9,1,7},{8,9,2},{3,4,6}};
+            int[] result = solution.findMissingAndRepeatedValues(grid);
+
+            int[] expected = {9,5};
+            assertEquals(expected[0], result[0]);
+            assertEquals(expected[1], result[1]);
+        }
+    }
 }
